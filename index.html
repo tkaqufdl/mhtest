@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MINHEE MESSAGE</title>
+  <link rel="icon" href="favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* 여기 CSS는 위에서 챠니가 준 Pretendard + header 스타일 + 아래 추가 버튼 스타일이 포함됨 */
+    @font-face {
+      font-family: 'Pretendard-Regular';
+      src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    body {
+      font-family: 'Pretendard-Regular', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9ff;
+      color: #333;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top:40px;
+    }
+
+    .profile-pic {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+
+    .profile-text .nickname {
+      font-weight: bold;
+      font-size: 17px;
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .profile-text .username {
+      color: #333;
+      font-size: 13px;
+      margin-top: 2px;
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .profile-text .status {
+      font-size: 13px;
+      color: gray;
+      margin-top: 2px;
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .centered-info {
+      text-align: center;
+      margin-top: 25px;
+      padding: 0 20px;
+    }
+
+    .centered-info .title {
+      font-weight: normal;
+      font-size: 14px;
+      margin-bottom: 4px;
+      color: #555;
+    }
+
+    .centered-info .subtitle {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .centered-info .period {
+      font-size: 14px;
+      margin-top: 3px;
+      color: #777;
+    }
+
+    .info-box {
+      background-color: #ffffff;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 30px auto 20px auto;
+      width: 90%;
+      max-width: 330px;
+      line-height: 1.6;
+      text-align: left;
+      color: #555;
+    }
+
+    .nickname-btns {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .nickname-btns button {
+      padding: 8px 16px;
+      font-size: 14px;
+      background-color: #7746ff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .nickname-btns button:hover {
+      background-color: #5e36d4;
+    }
+
+    .nickname-actions {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 5px;
+    }
+
+    .nickname-inline {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .nickname-inline input[type="text"]{
+        padding: 8px;
+        width: 150px;
+        font-size: 14px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    .tip {
+      margin-top: 10px;
+      font-size: 12px;
+      color: #888;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="header-container">
+    <img src="https://github.com/tkaqufdl/backupformh/raw/main/profile/221123.JPG" class="profile-pic" alt="프사">
+    <div class="profile-text">
+      <div class="nickname">미니강쥐🐶❤️</div>
+      <div class="username">@min_h.ee</div>
+      <div class="status">러비티가 너무 보고싶다아아아!!!!</div>
+    </div>
+  </div>
+
+  <div class="centered-info">
+    <div class="title">CRAVITY MINHEE</div>
+    <div class="subtitle">private message backup</div>
+    <div class="period">2021.04.16. ~ 2023.02.17.</div>
+  </div>
+
+  <div class="info-box">
+    - 크래비티 민희의 유니버스 프라이빗 메시지 백업 사이트입니다.<br>
+    - 오류나 문의사항은 트위터 <strong>@keoyomini</strong> 로 DM 부탁드립니다.<br>
+    - 악의적인 목적의 사용을 금합니다.<br><br>
+    <strong>TIP</strong><br>
+    닉네임 설정이 가능합니다.<br>
+    (설정하지 않을 시 <strong>러비티</strong>로 자동 적용)
+  </div>
+
+  <div class="nickname-btns">
+    <div class="nickname-inline">
+        <input type="text" id="nicknameInput" placeholder="Choose your name">
+        <button onclick="goWithNickname()">GO</button>
+        <button onclick="skipNickname()">SKIP</button>
+    </div>
+    <div class="tip">닉네임은 페이지를 닫기 전까지 유지됩니다.</div>
+  </div>
+
+  <script>
+    function goWithNickname() {
+      const nick = document.getElementById('nicknameInput').value.trim();
+      if (nick === '') return alert("닉네임을 입력하세요!");
+      sessionStorage.setItem('nickname', nick);
+      window.location.href = "main.html";  // 메인 페이지로 이동
+    }
+
+    function skipNickname() {
+      sessionStorage.setItem('nickname', '러비티');
+      window.location.href = "main.html";
+    }
+  </script>
+
+</body>
+</html>
