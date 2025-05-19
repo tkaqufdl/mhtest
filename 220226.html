@@ -1,0 +1,479 @@
+
+    <!DOCTYPE html>
+    <html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>220226</title>
+        <style>
+          @font-face {
+            font-family: 'Pretendard-Regular';
+            src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+          }
+
+          html, body {
+            font-family: 'Pretendard-Regular', Arial, sans-serif !important;
+            font-size: 14px;
+            background-color: #f9f9ff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+          }
+
+          .chat-container {
+            width: 100%;
+            max-width: 360px;
+            margin: 0 auto;
+            padding: 20px 10px;
+            background-color: #eee8fe;
+            box-sizing: border-box;
+          }
+
+          .date-banner {
+            text-align: center;
+            margin: 60px auto;
+            padding: 8px 18px;
+            background: #f8f7fd;
+            border-radius: 15px;
+            display: inline-block;
+            font-weight: bold;
+            color: #6d6c6c;
+          }
+
+          .message-group {
+            margin-bottom: 5px;
+            max-width: 80%;
+          }
+
+          .message-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+          }
+
+          .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            flex-shrink: 0;
+          }
+
+          .message-info {
+            display: flex;
+            flex-direction: column;
+          }
+
+          .name {
+            font-weight: bold;
+            margin-bottom: -10px;
+          }
+
+          .message {
+            display: flex;
+            align-items: flex-end;
+            margin-top: 5px;
+            transform: translateY(-22px);
+          }
+
+          .text-bubble {
+            background-color: #7746ff;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 2px 18px 18px 2px;
+            max-width: 80%;
+            word-wrap: break-word;
+            margin-left: 49px;
+            position: relative;
+            text-align: left;
+          }
+
+          .message-group .message:last-child .text-bubble {
+            border-radius: 2px 18px 18px 18px;
+          }
+
+          .timestamp {
+            font-size: 12px;
+            color: #666;
+            margin-left: 5px;
+            white-space: nowrap;
+          }
+
+          .message-group .message:not(:last-child) .timestamp {
+            display: none;
+          }
+
+          .message-group .message:last-child .timestamp {
+            position: absolute;
+            right: -40px;
+            bottom: 0;
+          }
+
+          .video-bubble {
+            background-color: #7746ff;
+            padding: 10px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-left: 49px;
+            max-width: 80%;
+            color: white;
+            box-sizing: border-box;
+          }
+
+          .video-content {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+            display: block;
+          }
+
+          .download-btn {
+            display: block;
+            margin-top: 5px;
+            font-size: 12px;
+            color: #ccc;
+            text-decoration: underline;
+          }
+
+        </style>
+    </head>
+    <body>
+      <div class="chat-container">
+        <div class="date-banner">2022년 02월 26일</div>
+    
+        <div class="message-group">
+          <div class="message-header">
+            <img src="https://github.com/tkaqufdl/backupformh/blob/main/profile/210915.jpeg?raw=true" alt="Avatar" class="avatar">
+            <div class="name">민희</div>
+          </div>
+
+                <div class="message">
+                  <div class="video-bubble">
+                    <video controls class="video-content">
+                      <source src="https://github.com/tkaqufdl/backupformh/raw/main/vod/220226.mp4" type="video/mp4">
+      브라우저가 동영상을 지원하지 않아요.
+                    </video>
+                    <a href="https://github.com/tkaqufdl/backupformh/raw/main/vod/220226.mp4" download class="download-btn">다운로드</a>
+                  </div>
+                </div>
+
+                <div class="message">
+                  <div class="text-bubble">허허
+                  <span class="timestamp">00:27</span>
+                  </div>
+                </div>
+                
+        </div>
+        <script>
+          window.addEventListener("DOMContentLoaded", () => {
+            const nickname = sessionStorage.getItem("nickname") || "러비티";
+            const displayName = nickname === "러비티" ? "<strong>러비티</strong>" : nickname;
+            document.body.innerHTML = document.body.innerHTML.replace(/@@/g, displayName);
+          });
+       </script>
+       </body>
+       </html>
+       
+        <div class="message-group">
+          <div class="message-header">
+            <img src="https://github.com/tkaqufdl/backupformh/blob/main/profile/210915.jpeg?raw=true" alt="Avatar" class="avatar">
+            <div class="name">민희</div>
+          </div>
+        
+                <div class="message">
+                  <div class="text-bubble">실은 셀카 보내달라는게 너무 많았는데
+                  <span class="timestamp">00:28</span>
+                  </div>
+                </div>
+                
+                <div class="message">
+                  <div class="text-bubble">지금은 아니지만
+                  <span class="timestamp">00:28</span>
+                  </div>
+                </div>
+                
+                <div class="message">
+                  <div class="text-bubble">요맘때 이팅 하는 영상이라도..
+                  <span class="timestamp">00:28</span>
+                  </div>
+                </div>
+                
+                <div class="message">
+                  <div class="text-bubble">운동하구
+                  <span class="timestamp">00:28</span>
+                  </div>
+                </div>
+                
+                <div class="message">
+                  <div class="text-bubble">편지읽는데
+                  <span class="timestamp">00:28</span>
+                  </div>
+                </div>
+                
+                <div class="message">
+                  <div class="text-bubble">너무 벅차올라서
+                  <span class="timestamp">00:28</span>
+                  </div>
+                </div>
+                
+                <div class="message">
+                  <div class="text-bubble">잠깐 왔어
+                  <span class="timestamp">00:28</span>
+                  </div>
+                </div>
+                
+        </div>
+        <script>
+          window.addEventListener("DOMContentLoaded", () => {
+            const nickname = sessionStorage.getItem("nickname") || "러비티";
+            const displayName = nickname === "러비티" ? "<strong>러비티</strong>" : nickname;
+            document.body.innerHTML = document.body.innerHTML.replace(/@@/g, displayName);
+          });
+       </script>
+       </body>
+       </html>
+       
+        <div class="message-group">
+          <div class="message-header">
+            <img src="https://github.com/tkaqufdl/backupformh/blob/main/profile/210915.jpeg?raw=true" alt="Avatar" class="avatar">
+            <div class="name">민희</div>
+          </div>
+        
+                <div class="message">
+                  <div class="text-bubble">울지는 않앜ㅋㅋㅋㅋㅋㅋㅋ
+                  <span class="timestamp">00:29</span>
+                  </div>
+                </div>
+                
+                <div class="message">
+                  <div class="text-bubble">새벽이니깐~
+                  <span class="timestamp">00:29</span>
+                  </div>
+                </div>
+                
+                <div class="message">
+                  <div class="text-bubble">감성좋넹
+                  <span class="timestamp">00:29</span>
+                  </div>
+                </div>
+                
+                <div class="message">
+                  <div class="text-bubble">공카도 읽구 손편지도 읽구
+                  <span class="timestamp">00:29</span>
+                  </div>
+                </div>
+                
+                <div class="message">
+                  <div class="text-bubble">셀카 못보낸게
+                  <span class="timestamp">00:29</span>
+                  </div>
+                </div>
+                
+                <div class="message">
+                  <div class="text-bubble">맘에 걸려서
+                  <span class="timestamp">00:29</span>
+                  </div>
+                </div>
+                
+                <div class="message">
+                  <div class="text-bubble">이렇게라도 보내봐여
+                  <span class="timestamp">00:29</span>
+                  </div>
+                </div>
+                
+        </div>
+        <script>
+          window.addEventListener("DOMContentLoaded", () => {
+            const nickname = sessionStorage.getItem("nickname") || "러비티";
+            const displayName = nickname === "러비티" ? "<strong>러비티</strong>" : nickname;
+            document.body.innerHTML = document.body.innerHTML.replace(/@@/g, displayName);
+          });
+       </script>
+       </body>
+       </html>
+       
+        <div class="message-group">
+          <div class="message-header">
+            <img src="https://github.com/tkaqufdl/backupformh/blob/main/profile/210915.jpeg?raw=true" alt="Avatar" class="avatar">
+            <div class="name">민희</div>
+          </div>
+        
+                <div class="message">
+                  <div class="text-bubble">실은
+                  <span class="timestamp">00:30</span>
+                  </div>
+                </div>
+                
+                <div class="message">
+                  <div class="text-bubble">내 눈썹이
+                  <span class="timestamp">00:30</span>
+                  </div>
+                </div>
+                
+                <div class="message">
+                  <div class="text-bubble">엄청 산눈썹??
+                  <span class="timestamp">00:30</span>
+                  </div>
+                </div>
+                
+                <div class="message">
+                  <div class="text-bubble">이라서
+                  <span class="timestamp">00:30</span>
+                  </div>
+                </div>
+                
+                <div class="message">
+                  <div class="text-bubble">정리를 안하면
+                  <span class="timestamp">00:30</span>
+                  </div>
+                </div>
+                
+                <div class="message">
+                  <div class="text-bubble">쫌 그래
+                  <span class="timestamp">00:30</span>
+                  </div>
+                </div>
+                
+                <div class="message">
+                  <div class="text-bubble">그래 가지고 셀카를 찍을수가 없었어..
+                  <span class="timestamp">00:30</span>
+                  </div>
+                </div>
+                
+                <div class="message">
+                  <div class="text-bubble">ㅋㅋㅋㅋㅋㅋ
+                  <span class="timestamp">00:30</span>
+                  </div>
+                </div>
+                
+        </div>
+        <script>
+          window.addEventListener("DOMContentLoaded", () => {
+            const nickname = sessionStorage.getItem("nickname") || "러비티";
+            const displayName = nickname === "러비티" ? "<strong>러비티</strong>" : nickname;
+            document.body.innerHTML = document.body.innerHTML.replace(/@@/g, displayName);
+          });
+       </script>
+       </body>
+       </html>
+       
+        <div class="message-group">
+          <div class="message-header">
+            <img src="https://github.com/tkaqufdl/backupformh/blob/main/profile/210915.jpeg?raw=true" alt="Avatar" class="avatar">
+            <div class="name">민희</div>
+          </div>
+        
+                <div class="message">
+                  <div class="text-bubble">내가 눈썹 정리를 할줄몰라!
+                  <span class="timestamp">00:31</span>
+                  </div>
+                </div>
+                
+                <div class="message">
+                  <div class="text-bubble">헤헤
+                  <span class="timestamp">00:31</span>
+                  </div>
+                </div>
+                
+                <div class="message">
+                  <div class="text-bubble">스케줄 가야만
+                  <span class="timestamp">00:31</span>
+                  </div>
+                </div>
+                
+                <div class="message">
+                  <div class="text-bubble">하긴해 눈썹 정리를
+                  <span class="timestamp">00:31</span>
+                  </div>
+                </div>
+                
+                <div class="message">
+                  <div class="text-bubble">아무래도 조금 쉬다보니
+                  <span class="timestamp">00:31</span>
+                  </div>
+                </div>
+                
+                <div class="message">
+                  <div class="text-bubble">조금 지져분하넹
+                  <span class="timestamp">00:31</span>
+                  </div>
+                </div>
+                
+                <div class="message">
+                  <div class="text-bubble">아무튼~
+                  <span class="timestamp">00:31</span>
+                  </div>
+                </div>
+                
+        </div>
+        <script>
+          window.addEventListener("DOMContentLoaded", () => {
+            const nickname = sessionStorage.getItem("nickname") || "러비티";
+            const displayName = nickname === "러비티" ? "<strong>러비티</strong>" : nickname;
+            document.body.innerHTML = document.body.innerHTML.replace(/@@/g, displayName);
+          });
+       </script>
+       </body>
+       </html>
+       
+        <div class="message-group">
+          <div class="message-header">
+            <img src="https://github.com/tkaqufdl/backupformh/blob/main/profile/210915.jpeg?raw=true" alt="Avatar" class="avatar">
+            <div class="name">민희</div>
+          </div>
+        
+                <div class="message">
+                  <div class="text-bubble">이제 가봐야게써
+                  <span class="timestamp">00:32</span>
+                  </div>
+                </div>
+                
+                <div class="message">
+                  <div class="text-bubble">언능 자!
+                  <span class="timestamp">00:32</span>
+                  </div>
+                </div>
+                
+                <div class="message">
+                  <div class="text-bubble">나도 양치하고 자러 가야겠수
+                  <span class="timestamp">00:32</span>
+                  </div>
+                </div>
+                
+                <div class="message">
+                  <div class="text-bubble">아녕~
+                  <span class="timestamp">00:32</span>
+                  </div>
+                </div>
+                
+                <div class="message">
+                  <div class="text-bubble">사랑!
+                  <span class="timestamp">00:32</span>
+                  </div>
+                </div>
+                
+                <div class="message">
+                  <div class="text-bubble">❤️
+                  <span class="timestamp">00:32</span>
+                  </div>
+                </div>
+                
+                <div class="message">
+                  <div class="text-bubble">요맘때 마싯다!
+                  <span class="timestamp">00:32</span>
+                  </div>
+                </div>
+                
+        </div>
+        <script>
+          window.addEventListener("DOMContentLoaded", () => {
+            const nickname = sessionStorage.getItem("nickname") || "러비티";
+            const displayName = nickname === "러비티" ? "<strong>러비티</strong>" : nickname;
+            document.body.innerHTML = document.body.innerHTML.replace(/@@/g, displayName);
+          });
+       </script>
+       </body>
+       </html>
+       </div></body></html>
